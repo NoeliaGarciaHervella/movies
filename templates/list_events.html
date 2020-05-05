@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <!--Iconos-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8a8c8a219.js" crossorigin="anonymous"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/templates/assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="start">
+    <a (click)="init()" class="navbar-brand" id="logo"><img height="20" alt="LETTA" src="../../../assets/img/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="divSearchLogin justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="mt-2 mb-2">
+          <form>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="btn input-group-text material-icons spanSearch">search</span>
+              </div>
+              <input id="inputSearch" type="text" class="form-control" placeholder="Search" aria-label="Username"
+                aria-describedby="basic-addon1">
+
+            </div>
+          </form>
+        </li>
+        <li class="ml-4 mt-2 mb-2 urlLogin">
+          <a href="" id="login">Login</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+    <main role="main">
+        {% if movies.count() > 0  %}
+            <div class="album py-5">
+                <div class="container">
+                    <div class="row">
+                        {% for movie in movies %}
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top eventImage" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Netflix" alt="Netflix [100%x225]" src="" data-holder-rendered="true">
+                                    <div class="card-body">
+                                        <h3 class="text-center">Titulo</h3>
+                                        <p class="card-text text-center">Descripción</p>
+                                        <p><u>Categoría:</u> </p>
+                                        <p><u>Localización:</u> </p>
+                                        <p><u>Asistentes:</u> </p>
+
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <small class="text-muted">noelia</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="noMovies d-flex justify-content-center align-items-center col-12">
+                <h3>Lo sentimos, pero ahora mismo no hay ninguna pelicula disponible</h3>
+            </div>
+        {% endif %}
+    </main>
+
+<footer class="">
+
+    <div class="row mt-5">
+      <div class="col-sm-6 ">
+        <h1>What is LETTA?</h1>
+          <p>FAQ
+          <br>About Us
+          <br>Terms of Use</p>
+      </div>
+      <div class="col-sm-6 mt-5">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="https://www.instagram.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-instagram"></span></a>
+            <a href="https://twitter.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-twitter"></span></a>
+            <a href="https://www.facebook.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-facebook"></span></a>
+            <a href="https://github.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-github"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="float-right">
+        <a href="#start" id="back">Back to top</a>
+    </p>
+</footer>
+</body>
+</html>
