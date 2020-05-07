@@ -15,30 +15,37 @@
 # limitations under the License.
 #
 import webapp2
-
-from webapp2_extras import jinja2
-
+from model.movie import Movie
 from webapp2_extras.users import users
+from webapp2_extras import jinja2
+import model.user as user_mgt
 
-
-class MainHandler(webapp2.RequestHandler):
+class MoviesHandler(webapp2.RequestHandler):
     def get(self):
 
-        usr = users.get_current_user()
-
-        if usr:
-            url_usr = users.create_logout_url("/")
-        else:
-            url_usr = users.create_login_url("/")
-
         jinja = jinja2.get_jinja2(app=self.app)
+        usr = users.get_current_user()
+        user = user_mgt.retrieve(usr)
 
-        valores_plantilla = {
-            "usr": usr,
-            "url_usr": url_usr
-        }
-        self.response.write(jinja.render_template("index.html", **valores_plantilla))
+        if usr and user:
+            url_usr = users.create_logout_url("/")
+            movies = Movie.query().order(Movie.title)
+            valores_plantilla = {
+                "movies": movies,
+                "usr": usr,
+                "user":user,
+                "url_usr": url_usr
+            }
+
+            self.response.write(jinja.render_template("list_movies.html", **valores_plantilla))
+        else:
+            return self.redirect("/addMovie")
+
+
+
+
+
 
 app = webapp2.WSGIApplication([
-    ('/movie', MainHandler)
+    ('/movies', MoviesHandler)
 ], debug=True)

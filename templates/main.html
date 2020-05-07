@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <!--Iconos-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8a8c8a219.js" crossorigin="anonymous"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Fuetes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap" rel="stylesheet">
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/templates/assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="start">
+        <a class="navbar-brand" id="logo"><img id="noelia" height="60" alt="MOVIE" src="/templates/assets/img/logo.webp"> Cinema</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="divSearchLogin justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav navbar-right">
+                {% if usr %}
+                    <li class="ml-4 mt-2 mb-2 urlLogin" data-toggle="tooltip" data-placement="auto" title="Crear pelicula" >
+                        <a href="/addMovie"><i class="app fas fa-plus"></i></a>
+                    </li>
+                    <li class="ml-4 mt-2 mb-2 urlLogin" data-toggle="tooltip" data-placement="auto" title="Buscar pelicula">
+                        <a href=""><i class="app fas fa-search"></i></a>
+                    </li>
+
+                    <li class="ml-4 mt-2 mb-2 urlLogin" data-toggle="tooltip" data-placement="auto" title="Cerrar sesión">
+                        <a href="{{ url_usr }}"><i class="app fas fa-sign-out-alt"></i></a>
+                    </li>
+                {% else %}
+                    <li class="ml-4 mt-2 mb-2 urlLogin">
+                        <a href="{{ url_usr }}" class="login">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+        {% endblock %}
+
+<footer class="">
+
+    <div class="row mt-5">
+      <div class="col-sm-6 ">
+        <h1>What is LETTA?</h1>
+          <p>FAQ
+          <br>About Us
+          <br>Terms of Use</p>
+      </div>
+      <div class="col-sm-6 mt-5">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="https://www.instagram.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-instagram"></span></a>
+            <a href="https://twitter.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-twitter"></span></a>
+            <a href="https://www.facebook.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-facebook"></span></a>
+            <a href="https://github.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-github"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="float-right">
+        <a href="#start" id="back">Back to top</a>
+    </p>
+</footer>
+</body>
+</html>

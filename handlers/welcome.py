@@ -15,24 +15,33 @@
 # limitations under the License.
 #
 import webapp2
-from model.movie import Movie
 from webapp2_extras.users import users
 from webapp2_extras import jinja2
+import model.user as usr_mgt
 
-class MovieHandler(webapp2.RequestHandler):
+class WelcomeHandler(webapp2.RequestHandler):
     def get(self):
-
         jinja = jinja2.get_jinja2(app=self.app)
+
         usr = users.get_current_user()
-        """Debemos comprobar si el usuario no esta vacio"""
-        movies = Movie.query().order(Movie.title)
+        usr_info = usr_mgt.retrieve(usr)
+        if usr and usr_info:
+            return self.redirect("/movies")
+        else:
+            usr_info = usr_mgt.create_empty_user()
+            usr_info.nick = "Login"
+            url_usr = users.create_login_url("/movies")
+
         valores_plantilla = {
-            "movies": movies
+            "usr": usr,
+            "url_usr": url_usr
         }
 
 
-        self.response.write(jinja.render_template("list_events.html", **valores_plantilla))
+        self.response.write(jinja.render_template("welcome.html", **valores_plantilla))
+
+
 
 app = webapp2.WSGIApplication([
-    ('/', MovieHandler)
+    ('/', WelcomeHandler)
 ], debug=True)

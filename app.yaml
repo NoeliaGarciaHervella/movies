@@ -14,11 +14,16 @@ handlers:
   application_readable: true
 
 - url: /
-  script: handlers.movie.app
+  script: handlers.welcome.app
 
-- url: /movie
-  script: handlers.main.app
+- url: /movies
+  script: handlers.movies.listMovie.app
   login: required
+
+- url: /addMovie
+  script: handlers.movies.addMovie.app
+  login: required
+
 
 
 

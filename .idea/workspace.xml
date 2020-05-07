@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f310214-0286-4fc2-a944-68155d9bbc0b" name="Default Changelist" comment="" />
+    <list default="true" id="7f310214-0286-4fc2-a944-68155d9bbc0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/movies/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/welcome.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/enum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/assets/css/welcome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/list_movies.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/addMovie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/listMovie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/list_events.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,13 +27,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bU0CwFjIqFiMPzfVchT5Kk2VPD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,17 +46,19 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../facturas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/handlers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\movies" />
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\templates\assets\css" />
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\templates" />
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
     </key>
   </component>
@@ -70,6 +93,10 @@
       <workItem from="1588671246287" duration="245000" />
       <workItem from="1588672717292" duration="600000" />
       <workItem from="1588695532140" duration="13226000" />
+      <workItem from="1588757113754" duration="15221000" />
+      <workItem from="1588782775001" duration="9772000" />
+      <workItem from="1588840428480" duration="29025000" />
+      <workItem from="1588890185523" duration="1050000" />
     </task>
     <servers />
   </component>
@@ -77,32 +104,40 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1588704264969">
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588865603336">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588704264969" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1588713790803">
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588865603336" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1588784422627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588713790803" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1588713790803">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588784422627" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1588890072650">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588713790803" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1588713790803">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1588890072650">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588713790803" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1588713790803">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1588890072650">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588713790803" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1588695583032">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1588890072650">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588695583032" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1588890191654">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588890191654" />
+    <state x="379" y="96" width="607" height="536" key="find.popup" timestamp="1588890068417">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="96" width="607" height="536" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1588890068417" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/proyecto$proyecto.coverage" NAME="proyecto Coverage Results" MODIFIED="1588713790788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto$proyecto.coverage" NAME="proyecto Coverage Results" MODIFIED="1588890238228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
