@@ -13,8 +13,9 @@ handlers:
   static_dir: templates
   application_readable: true
 
-- url: /
-  script: handlers.welcome.app
+- url: /showMovie/.+
+  script: handlers.movies.showMovie.app
+  login: required
 
 - url: /movies
   script: handlers.movies.listMovie.app
@@ -23,6 +24,13 @@ handlers:
 - url: /addMovie
   script: handlers.movies.addMovie.app
   login: required
+
+- url: /
+  script: handlers.welcome.app
+
+
+
+
 
 
 

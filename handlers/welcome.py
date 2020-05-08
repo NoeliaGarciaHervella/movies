@@ -21,24 +21,25 @@ import model.user as usr_mgt
 
 class WelcomeHandler(webapp2.RequestHandler):
     def get(self):
-        jinja = jinja2.get_jinja2(app=self.app)
-
         usr = users.get_current_user()
-        usr_info = usr_mgt.retrieve(usr)
-        if usr and usr_info:
+        user = usr_mgt.retrieve(usr)
+
+        if usr and user:
             return self.redirect("/movies")
         else:
-            usr_info = usr_mgt.create_empty_user()
-            usr_info.nick = "Login"
+
+            user = usr_mgt.create_empty_user()
+            user.nick = "Login"
+
             url_usr = users.create_login_url("/movies")
 
-        valores_plantilla = {
-            "usr": usr,
-            "url_usr": url_usr
-        }
+            valores_plantilla = {
+                "usr": usr,
+                "url_usr": url_usr
+            }
 
-
-        self.response.write(jinja.render_template("welcome.html", **valores_plantilla))
+            jinja = jinja2.get_jinja2(app=self.app)
+            self.response.write(jinja.render_template("welcome.html", **valores_plantilla))
 
 
 

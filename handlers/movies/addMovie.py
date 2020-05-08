@@ -17,28 +17,61 @@
 import webapp2
 
 from webapp2_extras import jinja2
-
 from webapp2_extras.users import users
+import model.user as usr_mgt
+import model.movie as movie_mgt
+import time
 
 
 class AddMovieHandler(webapp2.RequestHandler):
     def get(self):
 
         usr = users.get_current_user()
+        user = usr_mgt.retrieve(usr)
 
-        if usr:
-            url_usr = users.create_login_url("/")
+        if usr and user:
+            url_usr = users.create_logout_url("/")
+
+            valores_plantilla = {
+                "usr": usr,
+                "url_usr": url_usr
+            }
+
+            jinja = jinja2.get_jinja2(app=self.app)
+            self.response.write(jinja.render_template("add_movie.html", **valores_plantilla))
         else:
-
             return self.redirect("/")
 
-        jinja = jinja2.get_jinja2(app=self.app)
 
-        valores_plantilla = {
-            "usr": usr,
-            "url_usr": url_usr
-        }
-        self.response.write(jinja.render_template("add_movie.html", **valores_plantilla))
+    def post(self):
+        usr = users.get_current_user()
+        user = usr_mgt.retrieve(usr)
+
+        if usr and user:
+            title = self.request.get("title")
+            exit_movie = movie_mgt.get_movie(title)
+
+            if exit_movie is None:
+                movie = movie_mgt.create_empty_movie()
+                movie.title = self.request.get("title").strip()
+                movie.director = self.request.get("director").strip()
+                genre = self.request.get("genre").strip()
+                movie.synopsis = self.request.get("synopsis").strip()
+                year = self.request.get("year").strip()
+                try:
+                    movie.year = int(year)
+                    genre = int(genre)
+                except ValueError:
+                    movie.year = 0
+
+                final_movie = movie_mgt.create(movie,genre)
+
+                movie_mgt.update(final_movie)
+                time.sleep(1)
+                return self.redirect("/movies")
+
+        else:
+            return self.redirect("/")
 
 app = webapp2.WSGIApplication([
     ('/addMovie', AddMovieHandler)

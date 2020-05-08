@@ -1,8 +1,7 @@
 {% extends "main.html" %}
 {% block content %}
 
-    <main role="main">
-        <p>{{ user.nick}}</p>
+    <div>
         {% if movies.count() > 0  %}
             <div class="album py-5">
                 <div class="container">
@@ -12,14 +11,14 @@
                                 <div class="card mb-4 box-shadow">
                                     <img class="card-img-top eventImage" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Netflix" alt="Netflix [100%x225]" src="" data-holder-rendered="true">
                                     <div class="card-body">
-                                        <h3 class="text-center">Titulo</h3>
-                                        <p class="card-text text-center">Descripción</p>
-                                        <p><u>Categoría:</u> </p>
-                                        <p><u>Localización:</u> </p>
-                                        <p><u>Asistentes:</u> </p>
+                                        <h3 class="text-center">{{ movie.title }}</h3>
+                                        <p class="card-text text-center">{{ movie.synopsis }}</p>
+                                        <p><u>Género:</u> {{ movie.genre }}</p>
+                                        <p><u>Director:</u> {{ movie.director }}</p>
+                                        <p><u>Año de estreno:</u> {{ movie.year }}</p>
 
                                         <div class="d-flex justify-content-end align-items-center">
-                                            <small class="text-muted">noelia</small>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href = '/showMovie/{{movie.key.urlsafe()}}';">View</button>
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +34,7 @@
             </div>
         {% endif %}
 
-    </main>
+    </div>
 
 {% endblock %}
 

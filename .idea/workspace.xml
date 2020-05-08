@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f310214-0286-4fc2-a944-68155d9bbc0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/movies/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/welcome.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/enum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/assets/css/welcome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/list_movies.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/welcome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/movies/showMovie.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/show_movie.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/addMovie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/listMovie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/movies/addMovie.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/addMovie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/movies/listMovie.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/listMovie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/welcome.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/welcome.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/movie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_movie.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/list_events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/list_movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list_movies.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,17 +44,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/handlers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/handlers/movies" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\movies" />
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\movies" />
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\templates\assets\css" />
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\templates" />
-      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
     </key>
   </component>
@@ -97,6 +94,9 @@
       <workItem from="1588782775001" duration="9772000" />
       <workItem from="1588840428480" duration="29025000" />
       <workItem from="1588890185523" duration="1050000" />
+      <workItem from="1588929027961" duration="14739000" />
+      <workItem from="1588961778265" duration="835000" />
+      <workItem from="1588963627514" duration="8790000" />
     </task>
     <servers />
   </component>
@@ -112,32 +112,32 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588784422627" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1588890072650">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1588975966828">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1588890072650">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1588975966828">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1588890072650">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1588975966828">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1588890072650">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1588975966828">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588890072650" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1588890191654">
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1588963722649">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588890191654" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588963722649" />
     <state x="379" y="96" width="607" height="536" key="find.popup" timestamp="1588890068417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="96" width="607" height="536" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1588890068417" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/proyecto$proyecto.coverage" NAME="proyecto Coverage Results" MODIFIED="1588890238228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto$proyecto.coverage" NAME="proyecto Coverage Results" MODIFIED="1588975966815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

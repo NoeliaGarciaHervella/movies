@@ -43,7 +43,6 @@ def create(usr, level):
     toret.nick = usr.nickname()
     toret.level = level
 
-    toret.put()
 
     return toret
 
@@ -80,8 +79,10 @@ def retrieve(usr):
         else:
             if found_users.count() == 0:
                 toret = create(usr, User.Level.Client)
+                update(toret)
             else:
                 toret = found_users.iter().next()
                 toret.usr = usr
+
 
     return toret
