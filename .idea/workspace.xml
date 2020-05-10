@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f310214-0286-4fc2-a944-68155d9bbc0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/handlers/movies/showMovie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/show_movie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/comments/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/comments/addComment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/mylist/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/mylist/addMovieList.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/mylist/showMoviesList.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/comment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/mymovies.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/movies/addMovie.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/addMovie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/movies/listMovie.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/listMovie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/welcome.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/welcome.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/movies/showMovie.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/movies/showMovie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/index.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/movie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/add_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_movie.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/list_movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list_movies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/show_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/show_movie.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -44,18 +51,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/handlers/movies" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/handlers/mylist" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\movies" />
-      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\movies" />
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\templates\assets\css" />
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\templates" />
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\mylist" />
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\model" />
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\comments" />
+      <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers\movies" />
       <recent name="C:\Users\Noelia\PycharmProjects\proyecto\handlers" />
     </key>
   </component>
@@ -96,7 +106,10 @@
       <workItem from="1588890185523" duration="1050000" />
       <workItem from="1588929027961" duration="14739000" />
       <workItem from="1588961778265" duration="835000" />
-      <workItem from="1588963627514" duration="8790000" />
+      <workItem from="1588963627514" duration="8797000" />
+      <workItem from="1589016847344" duration="10181000" />
+      <workItem from="1589045664710" duration="12999000" />
+      <workItem from="1589100806592" duration="14802000" />
     </task>
     <servers />
   </component>
@@ -112,32 +125,32 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588784422627" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1588975966828">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1589131490462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1588975966828">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589131490462" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1589131490462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1588975966828">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589131490462" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1589131490461">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1588975966828">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589131490461" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1589131490462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588975966828" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1588963722649">
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589131490462" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1589100971023">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588963722649" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589100971023" />
     <state x="379" y="96" width="607" height="536" key="find.popup" timestamp="1588890068417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="96" width="607" height="536" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1588890068417" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/proyecto$proyecto.coverage" NAME="proyecto Coverage Results" MODIFIED="1588975966815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto$proyecto.coverage" NAME="proyecto Coverage Results" MODIFIED="1589131490446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

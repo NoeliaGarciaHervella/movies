@@ -10,8 +10,8 @@ body,html,main{
     display: block;
 }
 
-.noMovies{
-  height: 100%;
+#noMovies{
+  height: 100%!important;
   text-align: center;
 }
 
@@ -307,6 +307,67 @@ input.input100 {
   background-position: center;
   opacity: 0.5;
 }
+
+
+/*show movie*/
+
+#divShow{
+    background-color: white;
+}
+
+#category{
+    text-transform: lowercase;
+}
+
+.color{
+    color: #337cbb;
+}
+
+.changeEvent{
+    width: 8%;
+}
+
+.icon{
+    font-size: 1.5rem;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+}
+
+
+#category{
+    color: #b91400;
+}
+
+#creator{
+    color: #fdd835;
+}
+
+#date{
+    color: #039be5;
+}
+
+#location{
+    color: #43a047;
+}
+
+#attendants{
+    color: #fb8c00;
+}
+
+#duration{
+    color: #8e24aa;
+}
+
+.comentsMovie{
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+}
+
+
 
 
 

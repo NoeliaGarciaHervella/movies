@@ -15,12 +15,16 @@
 # limitations under the License.
 #
 import webapp2
-
+import os
 from webapp2_extras import jinja2
 from webapp2_extras.users import users
+from google.appengine.api import images
 import model.user as usr_mgt
 import model.movie as movie_mgt
+import model.mymovies as mymovie_mgt
 import time
+
+
 
 
 class AddMovieHandler(webapp2.RequestHandler):
@@ -52,12 +56,17 @@ class AddMovieHandler(webapp2.RequestHandler):
             exit_movie = movie_mgt.get_movie(title)
 
             if exit_movie is None:
+
+
                 movie = movie_mgt.create_empty_movie()
                 movie.title = self.request.get("title").strip()
                 movie.director = self.request.get("director").strip()
                 genre = self.request.get("genre").strip()
                 movie.synopsis = self.request.get("synopsis").strip()
                 year = self.request.get("year").strip()
+                image_file = self.request.get("noe", None)
+                movie.image_bin = images.resize(image_file,300,300)
+
                 try:
                     movie.year = int(year)
                     genre = int(genre)
@@ -66,8 +75,17 @@ class AddMovieHandler(webapp2.RequestHandler):
 
                 final_movie = movie_mgt.create(movie,genre)
 
-                movie_mgt.update(final_movie)
-                time.sleep(1)
+                final_movie = movie_mgt.update(final_movie)
+                time.sleep(2)
+                self.response.write(final_movie.get().key.urlsafe())
+
+                mymovie = mymovie_mgt.create_empty_movie()
+                mymovie.movie = final_movie.get().key.urlsafe()
+                mymovie.user = user.email
+                final_mymovie = mymovie_mgt.create(mymovie)
+                mymovie_mgt.update(final_mymovie)
+                time.sleep(2)
+
                 return self.redirect("/movies")
 
         else:

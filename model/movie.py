@@ -21,7 +21,7 @@ class Movie(ndb.Model):
     genre = ndb.StringProperty(required=True)
     synopsis = ndb.StringProperty(required=True)
     year = ndb.IntegerProperty(required=True)
-
+    image_bin  = ndb.BlobProperty(required=True)
 
 def all_movies():
     return Movie.query()
@@ -29,6 +29,8 @@ def all_movies():
 def get_movie(title):
     return Movie.query(Movie.title == title).get()
 
+def get_movie_key(keyMovie):
+    return ndb.Key(urlsafe=keyMovie).get()
 
 def create(mov,genre):
 
@@ -38,9 +40,9 @@ def create(mov,genre):
     movie.genre = Movie.Genre.values[genre]
     movie.synopsis = mov.synopsis
     movie.year = mov.year
+    movie.image_bin = mov.image_bin
 
     return movie
-
 
 def create_empty_movie():
     movie = Movie()

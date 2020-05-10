@@ -15,39 +15,36 @@
 # limitations under the License.
 #
 import webapp2
-from webapp2_extras.users import users
+
 from webapp2_extras import jinja2
-import model.user as user_mgt
-import model.movie as movie_mgt
+from webapp2_extras.users import users
+import model.user as usr_mgt
+import model.comment as comment_mgt
+import time
 
-class MoviesHandler(webapp2.RequestHandler):
-    def get(self):
 
+class AddCommentHandler(webapp2.RequestHandler):
 
+    def post(self):
         usr = users.get_current_user()
-        user = user_mgt.retrieve(usr)
+        user = usr_mgt.retrieve(usr)
 
         if usr and user:
-            url_usr = users.create_logout_url("/")
-            mov_list = False
+            keyMovie = self.request.GET["idMovie"]
+            content = self.request.get("commentMovie")
+            comment = comment_mgt.create_empty_comment()
+            comment.content = content
+            comment.movie =  keyMovie
+            comment.user = user.email
 
-            movies = movie_mgt.all_movies()
+            final_comment = comment_mgt.create(comment)
+            comment_mgt.update(final_comment)
+            time.sleep(1)
+            return self.redirect("/showMovie/"+keyMovie)
 
-            valores_plantilla = {
-                "movies": movies,
-                "usr": usr,
-                "user":user,
-                "mov_list": mov_list,
-                "url_usr": url_usr
-            }
-            jinja = jinja2.get_jinja2(app=self.app)
-            self.response.write(jinja.render_template("list_movies.html", **valores_plantilla))
         else:
             return self.redirect("/")
 
-
-
-
 app = webapp2.WSGIApplication([
-    ('/movies', MoviesHandler)
+    ('/addComment', AddCommentHandler)
 ], debug=True)

@@ -6,10 +6,12 @@
             <div class="album py-5">
                 <div class="container">
                     <div class="row">
-                        {% for movie in movies %}
+                        {% if mov_list%}
+                            {% for movie in movies %}
+                            {% if movie.key.urlsafe() in key_mymovie %}
                             <div class="col-md-4">
                                 <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top eventImage" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Netflix" alt="Netflix [100%x225]" src="" data-holder-rendered="true">
+                                    <img class="card-img-top eventImage"  alt="Netflix [100%x225]" src="data:image/png;base64,{{movie.image_bin.encode('base64')}}" data-holder-rendered="true">
                                     <div class="card-body">
                                         <h3 class="text-center">{{ movie.title }}</h3>
                                         <p class="card-text text-center">{{ movie.synopsis }}</p>
@@ -23,12 +25,33 @@
                                     </div>
                                 </div>
                             </div>
-                        {% endfor %}
+                            {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            {% for movie in movies %}
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top eventImage"  alt="Netflix [100%x225]" src="data:image/png;base64,{{movie.image_bin.encode('base64')}}" data-holder-rendered="true">
+                                    <div class="card-body">
+                                        <h3 class="text-center">{{ movie.title }}</h3>
+                                        <p class="card-text text-center">{{ movie.synopsis }}</p>
+                                        <p><u>Género:</u> {{ movie.genre }}</p>
+                                        <p><u>Director:</u> {{ movie.director }}</p>
+                                        <p><u>Año de estreno:</u> {{ movie.year }}</p>
+
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href = '/showMovie/{{movie.key.urlsafe()}}';">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
         {% else %}
-            <div class="noMovies d-flex justify-content-center align-items-center col-12">
+            <div id="noMovies" class="d-flex justify-content-center align-items-center col-12">
 
                 <h3>Lo sentimos, pero ahora mismo no hay ninguna pelicula disponible</h3>
             </div>

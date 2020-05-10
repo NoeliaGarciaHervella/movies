@@ -8,6 +8,7 @@
 				<div class="col-md-6 col-12 d-flex align-items-center justify-content-center">
 					<form class="col-10 mt-5 mb-5" id="newMovie"
 					method="post"
+						  enctype="multipart/form-data"
 					action="/addMovie">
 						<div class="mb-4">
 							<h1 class="title"><b>Añade una película</b></h1>
@@ -24,7 +25,7 @@
         									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       									</div>
       									<div class="modal-body">
-											<input type="text" class="form-control-file" id="exampleFormControlFile1"name="photo">
+<input required   type="file" class="form-control-file" name="noe">
       									</div>
       									<div class="modal-footer">
         									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerar</button>
@@ -68,6 +69,7 @@
 							<span class="fa-stack spanAddMovie d-flex align-items-center ml-4"><i class="fas fa-hourglass-half fa-stack-2x fa-inverse text-dark"></i></span>
       						<input type="number" name="year" class="input100"  placeholder="Año" min="1895" max="2020" required>
 						</div>
+
 
 						<div class="container-login100-form-btn mt-5">
 							<button type="submit" class="login100-form-btn createMovie">Crear</button>
