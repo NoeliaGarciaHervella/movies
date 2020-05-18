@@ -37,6 +37,9 @@ handlers:
   script: handlers.mylist.showMoviesList.app
   login: required
 
+- url: /error
+  script: handlers.error.app
+
 - url: /
   script: handlers.welcome.app
 

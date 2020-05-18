@@ -31,6 +31,7 @@ class AddCommentHandler(webapp2.RequestHandler):
 
         if usr and user:
             keyMovie = self.request.GET["idMovie"]
+            self.request.path_url
             content = self.request.get("commentMovie")
             comment = comment_mgt.create_empty_comment()
             comment.content = content

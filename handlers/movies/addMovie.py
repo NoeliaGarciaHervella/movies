@@ -87,6 +87,10 @@ class AddMovieHandler(webapp2.RequestHandler):
                 time.sleep(2)
 
                 return self.redirect("/movies")
+            else:
+                message = "Ya existe una pelicula con ese nombre debes crear otra pelicula o buscar la que desees"
+                self.redirect("/error?message="+message)
+
 
         else:
             return self.redirect("/")

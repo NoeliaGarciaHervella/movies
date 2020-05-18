@@ -32,6 +32,7 @@ class showMoviesListHandler(webapp2.RequestHandler):
 
         usr = users.get_current_user()
         user = usr_mgt.retrieve(usr)
+        mov_list = False
 
         if usr and user:
             url_usr = users.create_logout_url("/")
@@ -44,19 +45,16 @@ class showMoviesListHandler(webapp2.RequestHandler):
                     key_mymovie.append(mymovie.movie)
 
                 mov_list =True
-                valores_plantilla = {
-                    "movies": movies,
-                    "key_mymovie": key_mymovie,
-                    "mov_list": mov_list,
-                    "usr": usr,
-                    "user": user,
-                    "url_usr": url_usr
-                }
-                jinja = jinja2.get_jinja2(app=self.app)
-                self.response.write(jinja.render_template("list_movies.html", **valores_plantilla))
-
-
-
+            valores_plantilla = {
+                "movies": movies,
+                "key_mymovie": key_mymovie,
+                "mov_list": mov_list,
+                "usr": usr,
+                "user": user,
+                "url_usr": url_usr
+            }
+            jinja = jinja2.get_jinja2(app=self.app)
+            self.response.write(jinja.render_template("list_movies.html", **valores_plantilla))
         else:
             return self.redirect("/")
 

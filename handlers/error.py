@@ -20,7 +20,7 @@ from webapp2_extras import jinja2
 import model.user as user_mgt
 import model.movie as movie_mgt
 
-class MoviesHandler(webapp2.RequestHandler):
+class ErrorHandler(webapp2.RequestHandler):
     def get(self):
 
 
@@ -29,22 +29,18 @@ class MoviesHandler(webapp2.RequestHandler):
 
         if usr and user:
             url_usr = users.create_logout_url("/")
-            mov_list = False
-
-            movies = movie_mgt.all_movies()
-
-            listMovies = True
+            message = self.request.GET["message"]
+            url = self.request.GET["url"]
 
             valores_plantilla = {
-                "movies": movies,
+                "message": message,
+                "url": url,
                 "usr": usr,
                 "user":user,
-                "mov_list": mov_list,
-                "listMovies": listMovies,
                 "url_usr": url_usr
             }
             jinja = jinja2.get_jinja2(app=self.app)
-            self.response.write(jinja.render_template("list_movies.html", **valores_plantilla))
+            self.response.write(jinja.render_template("error.html", **valores_plantilla))
         else:
             return self.redirect("/")
 
@@ -52,5 +48,5 @@ class MoviesHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/movies', MoviesHandler)
+    ('/error', ErrorHandler)
 ], debug=True)

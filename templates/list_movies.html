@@ -1,12 +1,13 @@
 {% extends "main.html" %}
 {% block content %}
 
-    <div>
+
         {% if movies.count() > 0  %}
+    <div>
             <div class="album py-5">
                 <div class="container">
                     <div class="row">
-                        {% if mov_list%}
+                        {% if mov_list %}
                             {% for movie in movies %}
                             {% if movie.key.urlsafe() in key_mymovie %}
                             <div class="col-md-4">
@@ -50,14 +51,16 @@
                     </div>
                 </div>
             </div>
-        {% else %}
-            <div id="noMovies" class="d-flex justify-content-center align-items-center col-12">
-
-                <h3>Lo sentimos, pero ahora mismo no hay ninguna pelicula disponible</h3>
             </div>
+        {% else %}
+    <div id="listMovie">
+            <div id="noMovies" class="d-flex justify-content-center align-items-center col-12 mt-5 mb-5">
+                <h3>Lo sentimos, ahora mismo no hay ninguna pelicula disponible pero puedes añadir una el la opción +</h3>
+            </div>
+        </div>
         {% endif %}
 
-    </div>
+
 
 {% endblock %}
 
